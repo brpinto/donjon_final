@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   get '/profil', to: 'users#edit', as: 'profil'
   patch '/profil', to: 'users#update'
 
-  resources :notes, :users
+  resources :notes
+  resources :users do
+    member do
+      get 'confirm'
+    end
+  end
   resources :passwords, only: [:new, :edit, :update, :create]
 
 end

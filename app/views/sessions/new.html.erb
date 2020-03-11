@@ -1,0 +1,12 @@
+<section class="form-section">
+  <h1>Connexion</h1>
+
+  <div id="form-wrapper">
+    <%= form_for :user, url: new_session_path do |f| %>
+      <%= f.text_field :username, placeholder: "Nom d'utilisateur ou email"%>
+      <%= f.password_field :password, placeholder: "Mot de passe"%>
+      <a href="<%= new_password_path %>">Mot de passe oublié ?</a>
+      <button type="submit">Connexion</button>
+    <% end %>
+  </div>
+</section>

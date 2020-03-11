@@ -1,0 +1,22 @@
+<section class="form-section">
+  <% if @user.errors.any? %>
+    <div id="errors-wrapper">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h1>Inscription</h1>
+
+  <div id="form-wrapper">
+    <%= form_for @user do |f| %>
+      <%= f.text_field :username, placeholder: "Nom d'utilisateur" %>
+      <%= f.email_field :email, placeholder: "Email" %>
+      <%= f.password_field :password, placeholder: "Mot de passe" %>
+      <%= f.password_field :password_confirmation, placeholder: "Confirmation" %>
+      <button type="submit">Je m'inscris</button>
+    <% end %>
+  </div>
+</section>
