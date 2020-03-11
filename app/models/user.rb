@@ -13,6 +13,14 @@ class User < ApplicationRecord
             format: {with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/},
             uniqueness: {case_sensitive: false}
 
+  def self.current
+    Thread.current[:user]
+  end
+
+  def self.current=(user)
+    Thread.current[:user] = user
+  end
+
   def to_session
     {id: id}
   end
