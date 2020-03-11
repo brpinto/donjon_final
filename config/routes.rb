@@ -2,26 +2,27 @@ Rails.application.routes.draw do
 
   root 'notes#index'
 
-  get '/login', to: 'sessions#new', as: 'new_session'
-  post '/login', to: 'sessions#create'
+  localized do
+    get '/login', to: 'sessions#new', as: 'new_session'
+    post '/login', to: 'sessions#create'
 
-  delete '/logout', to: 'sessions#destroy', as: :destroy_session
+    delete '/logout', to: 'sessions#destroy', as: :destroy_session
 
-  get '/signin', to: 'users#new', as: :sign_in
+    get '/signin', to: 'users#new', as: :sign_in
 
-  get '/password-lost', to: 'passwords#new', as: :lost_password
+    get '/lost-password', to: 'passwords#new', as: :lost_password
 
-  get '/new-note', to: 'notes#new', as: :note_new
+    get '/new-note', to: 'notes#new', as: :note_new
 
-  get '/profil', to: 'users#edit', as: 'profil'
-  patch '/profil', to: 'users#update'
+    get '/profil', to: 'users#edit', as: 'profil'
+    patch '/profil', to: 'users#update'
 
-  resources :notes
-  resources :users do
-    member do
-      get 'confirm'
+    resources :notes
+    resources :users do
+      member do
+        get 'confirm'
+      end
     end
+    resources :passwords, only: [:new, :edit, :update, :create]
   end
-  resources :passwords, only: [:new, :edit, :update, :create]
-
 end

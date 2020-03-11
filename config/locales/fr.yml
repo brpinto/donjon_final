@@ -1,1 +1,44 @@
 fr:
+  routes:
+    edit: 'editer'
+    new-note: 'nouvelle-note'
+    login: 'connexion'
+    signin: 'inscription'
+    lost-password: 'mot-de-passe-perdu'
+    passwords: 'mot-de-passe'
+  activerecord:
+    attributes:
+      user:
+        username: "Le nom d'utilisateur"
+        password: "Le mot de passe"
+        email: "L'email"
+        password_confirmation: "La confirmation"
+      note:
+        title: "Le titre"
+        game_type: "Le type de jeu"
+        game_name: "Le nom du jeu"
+        content: "La note"
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: "ne peut pas être vide."
+            email:
+              invalid: "est invalide."
+              taken: "n'est pas disponible"
+            username:
+              taken: "n'est pas disponible"
+            password_confirmation:
+              confirmation: "doit être identique au mot de passe."
+        note:
+          attributes:
+            title:
+              blank: "ne peut pas être vide."
+              taken: "existe déjà (insensible à la casse)."
+            game_type:
+              blank: "ne peut pas être vide."
+            game_name:
+              blank: "ne peut pas être vide."
+            content:
+              blank: "ne peut pas être vide."
