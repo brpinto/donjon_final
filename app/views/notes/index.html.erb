@@ -1,0 +1,14 @@
+<section id="notes-preview-wrapper">
+  <% @notes.each do |n| %>
+    <article class="note-preview-content">
+      <h2 class="note-preview-title"><%= n.title %></h2>
+      <div>
+        <ul class="game-char">
+          <li><%= n.game_name %></li>
+          <li><%= n.game_type %></li>
+        </ul>
+        <a class="btn-link" href="<%= note_path(n.id) %>">Lire</a>
+      </div>
+    </article>
+  <% end %>
+</section>
