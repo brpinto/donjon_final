@@ -17,7 +17,7 @@
         <%= f.text_field :game_name, placeholder: 'Nom du jeu'%>
         <%= f.text_field :game_type, placeholder: 'Type de jeu' %>
       </div>
-      <%= f.text_area :content %>
+      <%= f.rich_text_area :content %>
       <button type="submit" id="save-button" class="contextual-link edit-btn">Modifier</button>
     <% end %>
   </article>

@@ -17,7 +17,7 @@
         <%= f.text_field :game_name, placeholder: 'Nom du jeu'%>
         <%= f.text_field :game_type, placeholder: 'Type de jeu' %>
       </div>
-      <%= f.text_area :content, placeholder: 'Votre texte ici...' %>
+      <%= f.rich_text_area :content, placeholder: 'Votre texte ici...' %>
       <button type="submit" id="save-button" class="contextual-link">Enregistrer la note</button>
     <% end %>
   </article>
