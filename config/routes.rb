@@ -1,3 +1,22 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  root 'notes#index'
+
+  get '/login', to: 'sessions#new', as: 'new_session'
+  post '/login', to: 'sessions#create'
+
+  delete '/logout', to: 'sessions#destroy', as: :destroy_session
+
+  get '/signin', to: 'users#new', as: :sign_in
+
+  get '/password-lost', to: 'passwords#new', as: :lost_password
+
+  get '/new-note', to: 'notes#new', as: :note_new
+
+  get '/profil', to: 'users#edit', as: 'profil'
+  patch '/profil', to: 'users#update'
+
+  resources :notes, :users
+  resources :passwords, only: [:new, :edit, :update, :create]
+
 end

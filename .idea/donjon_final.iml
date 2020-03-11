@@ -32,6 +32,7 @@
     <orderEntry type="library" scope="PROVIDED" name="activestorage (v6.0.2.1, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="activesupport (v6.0.2.1, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="addressable (v2.7.0, ruby-2.3.7-p456) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.13, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bindex (v0.8.1, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bootsnap (v1.4.6, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="builder (v3.2.4, ruby-2.3.7-p456) [gem]" level="application" />
@@ -71,6 +72,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.10.3, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-inotify (v0.10.1, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="regexp_parser (v1.7.0, ruby-2.3.7-p456) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="route_translator (v7.1.2, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby_dep (v1.5.0, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v2.2.0, ruby-2.3.7-p456) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v6.0.0, ruby-2.3.7-p456) [gem]" level="application" />
