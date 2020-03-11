@@ -1,0 +1,24 @@
+<section id="note-wrapper">
+  <article id="note-content">
+    <%= form_for @note do |f| %>
+
+      <% if @note.errors.any? %>
+        <div id="errors-wrapper">
+          <ul>
+            <% @note.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= f.text_field :title, placeholder: 'Titre' %>
+      <div id="game-data">
+        <%= f.text_field :game_name, placeholder: 'Nom du jeu'%>
+        <%= f.text_field :game_type, placeholder: 'Type de jeu' %>
+      </div>
+      <%= f.text_area :content %>
+      <button type="submit" id="save-button" class="contextual-link edit-btn">Modifier</button>
+    <% end %>
+  </article>
+</section>

@@ -22,15 +22,19 @@ class NotesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
+    if @note.update(note_params)
+      redirect_to note_path(@note.id), success: "Votre note a bien été mise à jour."
+    else
+      render 'edit'
+    end
   end
 
   def destroy
-
+    @note.destroy
+    redirect_to root_path, success: "Votre note a bien été supprimée."
   end
 
   private
