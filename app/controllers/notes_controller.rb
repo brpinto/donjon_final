@@ -15,7 +15,7 @@ class NotesController < ApplicationController
   def create
     @note = current_user.notes.new(note_params)
     if @note.save
-      redirect_to note_path(@note.id), success: "Votre note a été créée avec succès."
+      redirect_to note_path(@note.slug), success: "Votre note a été créée avec succès."
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to note_path(@note.id), success: "Votre note a bien été mise à jour."
+      redirect_to note_path(@note.slug), success: "Votre note a bien été mise à jour."
     else
       render 'edit'
     end
@@ -44,7 +44,7 @@ class NotesController < ApplicationController
   end
 
   def set_note
-    @note = Note.find(params[:id])
+    @note = current_user.notes.find_by_slug params[:slug]
   end
 
 end

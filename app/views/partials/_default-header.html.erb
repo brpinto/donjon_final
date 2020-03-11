@@ -7,9 +7,9 @@
           <% url = request.original_fullpath.split('/') %>
           <% if url[2] != 'new' and !url[2].nil? %>
             <% if url[3].nil? and url[2].to_i.is_a? Integer and !@note.errors.any? %>
-              <%= link_to "Éditer", edit_note_path(@note.id), class: "contextual-link" %>
+              <%= link_to "Éditer", edit_note_path(@note.slug), class: "contextual-link" %>
             <% end %>
-            <%= link_to "Supprimer", note_path(@note.id), data: {method: :delete, confirm: "Étes-vous sûr ?" }, class: "contextual-link delete-link" %>
+            <%= link_to "Supprimer", note_path(@note.slug), data: {method: :delete, confirm: "Étes-vous sûr ?" }, class: "contextual-link delete-link" %>
           <% end %>
         </div>
         <%= render :partial => 'partials/user-menu' %>

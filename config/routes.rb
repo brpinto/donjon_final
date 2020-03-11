@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     get '/profil', to: 'users#edit', as: 'profil'
     patch '/profil', to: 'users#update'
 
-    resources :notes
+    resources :notes, param: :slug
     resources :users do
       member do
         get 'confirm'
