@@ -1,0 +1,24 @@
+<header id="main-header">
+  <a href="<%= root_path %>"><img src="" alt="logo D&C"></a>
+  <nav id="main-menu">
+    <% if user_logged_in? %>
+      <section>
+        <div id="context-link">
+          <% url = request.original_fullpath.split('/') %>
+          <% if url[2] != 'new' and !url[2].nil?%>
+            <% if url[3].nil? and url[2].to_i.is_a? Integer %>
+              <%= link_to "Éditer", edit_note_path(@note.id), class: "contextual-link" %>
+            <% end %>
+            <%= link_to "Supprimer", note_path(@note.id), data: {method: :delete, confirm: "Étes-vous sûr ?" }, class: "contextual-link delete-link" %>
+          <% end %>
+        </div>
+        <%= render :partial => 'partials/user-menu' %>
+      </section>
+    <% else %>
+      <div id="nav-links">
+        <a href="<%= new_session_path %>" class="header-link">Connexion</a>
+        <a href="<%= sign_in_path %>" class="header-link">S'inscrire</a>
+      </div>
+    <% end %>
+  </nav>
+</header>

@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Donjons & Cornichons</title>
+    <title>Donjons</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="initial-scale=1, user-scalable=0" >
     <%= stylesheet_link_tag 'application-all', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% if user_logged_in? %>
+      <%= stylesheet_link_tag "application-loggedin", :media => "all" %>
+    <% else %>
+      <%= stylesheet_link_tag "application-loggedout", :media => "all" %>
+    <% end %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  <% if flash[:success] %>
+    <div id="flash-message" class="anim_longue">
+      <div id="affiche">
+        <div id="message">
+          <h2><%= flash[:success] %></h2>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <%= render :partial => 'partials/default-header' %>
+  <%= yield %>
+  <script>
+      function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+      }
+  </script>
   </body>
 </html>

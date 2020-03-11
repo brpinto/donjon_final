@@ -1,0 +1,9 @@
+<div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn"><%= User.find(current_user.id).username[0].upcase %></button>
+  <div id="myDropdown" class="dropdown-content">
+    <%= link_to "Mes notes", root_path%>
+    <%= link_to "Nouvelle note", note_new_path %>
+    <%= link_to "Mon profil", profil_path%>
+    <%= link_to "Déconnexion", destroy_session_path, data: {method: 'delete'}%>
+  </div>
+</div>

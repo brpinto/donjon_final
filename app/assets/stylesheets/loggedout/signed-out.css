@@ -1,0 +1,39 @@
+#offline-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(60px - 100vh) !important;
+}
+
+#offline-wrapper main {
+    height: calc(60px - 100vh) !important;
+    margin: 120px auto 0 auto;
+}
+
+/*
+    Header
+ */
+
+#main-header {
+    position: fixed;
+    top: 0;
+    background-color: #ffff;
+    width: 100%;
+    padding: 10px;
+    z-index: 99;
+}
+
+#main-header a {
+    text-decoration: none;
+}
+
+.header-link:first-child{
+    margin-right: 20px;
+}
+
+.header-link:visited{
+    color: black;
+}
+
+#nav-links a:nth-child(2){
+    font-weight: bold;
+}

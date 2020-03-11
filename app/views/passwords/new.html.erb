@@ -1,0 +1,9 @@
+<section class="form-section">
+  <h1>Mot de passe oublié</h1>
+  <div id="form-wrapper">
+    <%= form_for :user, url: passwords_path do |f| %>
+      <%= f.email_field :email, placeholder: "Votre email" %>
+      <button type="submit">Envoyer</button>
+    <% end %>
+  </div>
+</section>

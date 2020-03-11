@@ -1,0 +1,23 @@
+<% if @user.errors.any? %>
+  <div id="error-section">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<section class="form-section">
+  <h1>Modifier votre mot de passe</h1>
+  <div id="form-wrapper">
+    <%= form_for @user, url: password_path do |f| %>
+
+      <%= f.hidden_field :recover_password %>
+
+      <%= f.password_field :password, placeholder: "Nouveau mot de passe" %>
+      <%= f.password_field :password_confirmation, placeholder: "Confirmation mot de passe"  %>
+      <button type="submit">Confirmer</button>
+    <% end %>
+  </div>
+</section>
