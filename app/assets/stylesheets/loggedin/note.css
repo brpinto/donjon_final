@@ -4,7 +4,8 @@
 
 #note-wrapper {
     width: 66%; height: 100%;
-    margin: 120px auto 50px auto;
+    margin: 0 auto 50px auto;
+    padding-top: 120px;
 }
 
 /*
@@ -12,7 +13,7 @@
  */
 
 #notes-preview-wrapper {
-    margin-top: 90px;
+    padding-top: 90px;
 }
 
 .note-preview-content {
@@ -188,5 +189,9 @@ trix-toolbar .trix-button-group--file-tools {
 
     .edit-btn {
         right: 70px !important;
+    }
+
+    #save-button {
+        top: 25px;
     }
 }

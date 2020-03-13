@@ -54,7 +54,7 @@ body, header, ul, h1, input, button, li, p, h2 {
     top: 0;
     background-color: #ffff;
     width: 100%;
-    padding: 10px;
+    padding: 10px 150px 10px 150px;
     z-index: 99;
 }
 
@@ -87,7 +87,8 @@ body, header, ul, h1, input, button, li, p, h2 {
 
 .form-section {
     height: 300px;
-    margin: 70px auto;
+    margin: auto;
+    padding-top: 70px;
 }
 
 .form-section h1 {
@@ -143,7 +144,7 @@ body, header, ul, h1, input, button, li, p, h2 {
     list-style: none;
 }
 
-@media (max-width: 768px) {
+@media all and (max-width: 768px) {
     /*
         #main-header {
             flex-direction: column;
@@ -162,8 +163,19 @@ body, header, ul, h1, input, button, li, p, h2 {
         #context-link a {
             margin-right: 0;
         } */
+    #main-header {
+        padding: 20px 40px;
+    }
+
+    #main-menu {
+        margin: 0;
+    }
 
     .delete-link {
         display: none;
+    }
+
+    .form-section {
+        padding-top: 120px;
     }
 }

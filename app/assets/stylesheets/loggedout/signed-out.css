@@ -13,15 +13,6 @@
     Header
  */
 
-#main-header {
-    position: fixed;
-    top: 0;
-    background-color: #ffff;
-    width: 100%;
-    padding: 10px;
-    z-index: 99;
-}
-
 #main-header a {
     text-decoration: none;
 }
