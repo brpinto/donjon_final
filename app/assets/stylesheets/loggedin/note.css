@@ -132,9 +132,9 @@ form #game-data {
 
 #save-button {
     position: fixed;
-    top: 14.5px;
+    top: 18px;
     background-color: rgba(0,0,0,0);
-    right: 70px;
+    right: 200px;
     border: none;
     font-size: 1rem;
     padding: 10px;
@@ -144,7 +144,7 @@ form #game-data {
 }
 
 .edit-btn {
-    right: 170px !important;
+    right: 300px !important;
 }
 
 /*
