@@ -6,6 +6,7 @@ fr:
     signin: 'inscription'
     lost-password: 'mot-de-passe-perdu'
     passwords: 'mot-de-passe'
+    users: 'utilisateurs'
   activerecord:
     attributes:
       user:
