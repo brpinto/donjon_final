@@ -48,7 +48,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: donjon_final_production
-  username: donjon_final
-  password: <%= ENV['DONJON_FINAL_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
