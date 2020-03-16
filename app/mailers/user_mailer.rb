@@ -1,6 +1,4 @@
 class UserMailer < ApplicationMailer
-  default from: "hello@donjonsetcornichons.fr"
-
   def confirm(user)
     @user = user
 
