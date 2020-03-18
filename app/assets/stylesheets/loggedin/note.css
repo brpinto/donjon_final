@@ -34,7 +34,7 @@
     margin-bottom: 20px;
 }
 
-.btn-link {
+.btn-link, #first-note {
     text-decoration: none;
     color: #ffff;
     background-color: #0097A7;
@@ -51,7 +51,7 @@
     transition: all 300ms ease;
 }
 
-.btn-link:hover {
+.btn-link:hover, #first-note:hover {
     box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px;
 }
 
@@ -171,6 +171,25 @@ trix-toolbar .trix-button-row {
 
 trix-toolbar .trix-button-group--file-tools {
     display: none
+}
+
+#no-notes {
+    width: 66%; height: 500px;
+    margin: auto;
+    position: relative;
+}
+
+#background-no-notes {
+    width: 100%; height: 100%;
+    background: center / contain no-repeat url("undraw_typewriter_i8xd.svg");
+    opacity: 0.5;
+}
+
+#first-note {
+    position: absolute;
+    top: 15%;
+    min-height: 1.5rem !important;
+    left: calc(50% - 130px / 2);
 }
 
 @media screen and (max-width: 768px) {
