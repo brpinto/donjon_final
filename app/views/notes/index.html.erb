@@ -1,11 +1,5 @@
 <section id="notes-preview-wrapper">
-  <% if !@notes.nil? %>
-    <div id="no-notes">
-      <div id="background-no-notes"></div>
-      <%= link_to "Nouvelle note", note_new_path, id: 'first-note' %>
-    </div>
-
-  <% else %>
+  <% if !@notes.blank? %>
     <% @notes.each do |n| %>
       <article class="note-preview-content">
         <h2 class="note-preview-title"><%= n.title %></h2>
@@ -18,5 +12,10 @@
         </div>
       </article>
     <% end %>
+  <% else %>
+      <div id="no-notes">
+        <div id="background-no-notes"></div>
+        <%= link_to "Nouvelle note", note_new_path, id: 'first-note' %>
+      </div>
   <% end %>
 </section>
