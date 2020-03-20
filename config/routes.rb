@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'notes#index'
 
+  get '/.well-known/acme-challenge/:id' => 'application#letsencrypt'
+
   localized do
     get '/login', to: 'sessions#new', as: 'new_session'
     post '/login', to: 'sessions#create'

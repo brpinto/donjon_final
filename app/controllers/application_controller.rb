@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   Rails.application.routes.default_url_options[:host]= 'donjonsetcornichons.fr'
   private
 
+  def letsencrypt
+    render text: "9631_c66_9UWu7Biigi0hxDMuNey40tdp0eJhrzMzww.8VIWqivvayzjEmiknqSfpTDLJ2MpwwyG_v_3Ubx6gyY"
+  end
+
   def only_logged_in
     if !user_logged_in?
       redirect_to new_session_path, danger: "Vous n'avez pas le droit d'accéder à cette page"
