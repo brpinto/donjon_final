@@ -7,11 +7,12 @@ class ApplicationController < ActionController::Base
 
   add_flash_types :success, :error
   Rails.application.routes.default_url_options[:host]= 'donjonsetcornichons.fr'
-  private
 
   def letsencrypt
-    render text: "9631_c66_9UWu7Biigi0hxDMuNey40tdp0eJhrzMzww.8VIWqivvayzjEmiknqSfpTDLJ2MpwwyG_v_3Ubx6gyY"
+    render text: "tDlIQiGqiQtd6pyodRnCmhvQ8Dt3DTr6E1Pdo8sB4QA.8VIWqivvayzjEmiknqSfpTDLJ2MpwwyG_v_3Ubx6gyY"
   end
+
+  private
 
   def only_logged_in
     if !user_logged_in?
