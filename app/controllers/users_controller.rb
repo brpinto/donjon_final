@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :user_logged_out, only: [:new, :create, :confirm]
 
   def letsencrypt
-    render text: "FhM1lq6a7ZQnA7Ya_9PkkkCwt3jWslEo2ZcoaR7R8vk.8VIWqivvayzjEmiknqSfpTDLJ2MpwwyG_v_3Ubx6gyY"
+    render text: "CcEkRMLF3wlGvnabhM7VAmPArR37FJsrxVc6nVK4FXY.8VIWqivvayzjEmiknqSfpTDLJ2MpwwyG_v_3Ubx6gyY"
   end
 
   def new
