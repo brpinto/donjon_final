@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   Rails.application.routes.default_url_options[:host]= 'donjonsetcornichons.fr'
 
   def letsencrypt
-    render text: "ZaBZvKpMOhilI25YSgPPmSvGE-qT5At_kdwx5kcuUV8.8VIWqivvayzjEmiknqSfpTDLJ2MpwwyG_v_3Ubx6gyY"
+    render text: "FhM1lq6a7ZQnA7Ya_9PkkkCwt3jWslEo2ZcoaR7R8vk.8VIWqivvayzjEmiknqSfpTDLJ2MpwwyG_v_3Ubx6gyY"
   end
 
   private
