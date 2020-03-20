@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
   add_flash_types :success, :error
   Rails.application.routes.default_url_options[:host]= 'donjonsetcornichons.fr'
 
-  def letsencrypt
-    render text: "FhM1lq6a7ZQnA7Ya_9PkkkCwt3jWslEo2ZcoaR7R8vk.8VIWqivvayzjEmiknqSfpTDLJ2MpwwyG_v_3Ubx6gyY"
-  end
-
   private
 
   def only_logged_in
