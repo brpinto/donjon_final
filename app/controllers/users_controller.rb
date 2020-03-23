@@ -1,11 +1,7 @@
 class UsersController < ApplicationController
 
-  skip_before_action :only_logged_in, only: [:new, :create, :confirm, :letsencrypt]
+  skip_before_action :only_logged_in, only: [:new, :create, :confirm]
   before_action :user_logged_out, only: [:new, :create, :confirm]
-
-  def letsencrypt
-    render text: "CcEkRMLF3wlGvnabhM7VAmPArR37FJsrxVc6nVK4FXY.8VIWqivvayzjEmiknqSfpTDLJ2MpwwyG_v_3Ubx6gyY"
-  end
 
   def new
     @user = User.new
