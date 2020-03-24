@@ -1,6 +1,7 @@
 class Note < ApplicationRecord
   belongs_to :user
   has_rich_text :content
+  serialize :content
 
   after_validation :set_slug, only: [:create, :update]
 
