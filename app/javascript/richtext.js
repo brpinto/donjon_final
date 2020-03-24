@@ -8,6 +8,12 @@ addEventListener("trix-initialize", function (event) {
     new RichText(event.target)
 })
 
+addEventListener("trix-initialize", function (event) {
+  const { toolbarElement } = event.target
+  var redoElement = toolbarElement.querySelectorAll('[data-trix-key="shift+z"]')[0]
+  redoElement.setAttribute('data-trix-key', 'y')
+})
+
 addEventListener("trix-action-invoke", function (event) {
   if (event.actionName == "x-horizontal-rule") insertHorizontalRule()
 
