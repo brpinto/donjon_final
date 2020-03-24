@@ -130,7 +130,6 @@ form #game-data {
     padding-left: 20px;
 }
 
-/*
 #save-button {
     position: fixed;
     top: 18px;
@@ -143,9 +142,8 @@ form #game-data {
     z-index: 100;
     cursor: pointer;
 }
-*/
 
-#save-button {
+#new-note {
   position: fixed;
   top: 15px;
   right: 230px;
@@ -165,11 +163,11 @@ form #game-data {
   transition: all 300ms ease;
 }
 
-#save-button:hover {
+#new-note:hover {
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 5px;
 }
 
-#save-button:before {
+#new-note:before {
   content:'💾 ';
 }
 
