@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user, :user_logged_in?
 
   add_flash_types :success, :error
-  Rails.application.routes.default_url_options[:host]= 'http://donjonsetcornichons.fr'
+  Rails.application.routes.default_url_options[:host]= 'https://donjonsetcornichons.fr'
 
   private
 
