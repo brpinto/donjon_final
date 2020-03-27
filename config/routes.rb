@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
   root 'notes#index'
-  
+
+  get '/dashboard', to: 'months#show'
+  get '/dashboard-json', to: 'months#index', as: :data
+
   localized do
     get '/login', to: 'sessions#new', as: 'new_session'
     post '/login', to: 'sessions#create'

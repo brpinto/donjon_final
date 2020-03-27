@@ -1,0 +1,113 @@
+<section id="grid-container">
+  <div class="grid-item users">
+    <canvas id="usersChart"></canvas>
+  </div>
+  <div class="grid-item notes">
+    <canvas id="notesChart"></canvas>
+  </div>
+  <div class="grid-item notesMoy">
+    <canvas id="notesMoyChart"></canvas>
+  </div>
+  <div class="grid-item confirmed">
+    <canvas id="confirmedChart"></canvas>
+  </div>
+</section>
+
+<script>
+    function ajaxGet(url, callback) {
+        var req = new XMLHttpRequest();
+        req.open("GET", url);
+        req.addEventListener("load", function () {
+            if (req.status >= 200 && req.status < 400) {
+                // Appelle la fonction callback en lui passant la réponse de la requête
+                callback(req.responseText);
+            } else {
+                console.error(req.status + " " + req.statusText + " " + url);
+            }
+        });
+        req.addEventListener("error", function () {
+            console.error("Erreur réseau avec l'URL " + url);
+        });
+        req.send(null);
+    }
+
+    let data_dc = [];
+
+    ajaxGet("<%= data_url %>", function(reponse){
+        // on transforme les données au format JSON envoyé par le serveur en objet
+        data_dc = JSON.parse(reponse);
+        let usersData = [];
+        let notesData = [];
+        let confirmedData = [];
+        let notesMoyData = [];
+        for (let i in data_dc.months_data) {
+            usersData.push(data_dc.months_data[i].users_total);
+            notesData.push(data_dc.months_data[i].notes_total);
+            notesMoyData.push(data_dc.months_data[i].notes_per_user);
+            confirmedData.push(data_dc.months_data[i].users_confirmed);
+        }
+        labels =  data_dc.months_name;
+        renderUsersChart(usersData, labels);
+        renderNotesChart(notesData, labels);
+        renderNotesMoyChart(notesMoyData, labels);
+        renderConfirmedChart(confirmedData, labels);
+    });
+
+    function renderUsersChart(data, labels) {
+        var ctx = document.getElementById("usersChart").getContext('2d');
+        var usersChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Nombre d'utilisateurs total",
+                    data: data,
+                    borderColor: ['rgba(75, 192, 192, 1)'],
+                    backgroundColor: ['rgba(75, 192, 192, 0.2)']
+                }]
+            },
+        });
+    }
+
+    function renderNotesChart(data, labels) {
+        var ctx = document.getElementById("notesChart").getContext('2d');
+        var usersChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Nombre de notes total",
+                    data: data,
+                }]
+            },
+        });
+    }
+
+    function renderNotesMoyChart(data, labels) {
+        var ctx = document.getElementById("notesMoyChart").getContext('2d');
+        var notesMoyChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Nombre moyen de notes par utilisateur",
+                    data: data,
+                }]
+            },
+        });
+    }
+
+    function renderConfirmedChart(data, labels) {
+        var ctx = document.getElementById("confirmedChart").getContext('2d');
+        var confirmedChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: "Nombre d'utilisateurs confirmés",
+                    data: data,
+                }]
+            },
+        });
+    }
+</script>
