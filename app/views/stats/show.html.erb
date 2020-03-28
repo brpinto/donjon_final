@@ -33,7 +33,7 @@
 
     let data_dc = [];
 
-    ajaxGet("<%= data_url %>", function(reponse){
+    ajaxGet("<%= stats_url %>", function(reponse){
         // on transforme les données au format JSON envoyé par le serveur en objet
         data_dc = JSON.parse(reponse);
         let usersData = [];
