@@ -5,14 +5,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="initial-scale=1, user-scalable=0" >
-    <%= stylesheet_link_tag 'application-all', media: 'all', stats: 'reload' %>
+    <%= stylesheet_link_tag 'application-all', media: 'all', 'data-turbolinks-track': 'reload' %>
     <% if user_logged_in? %>
       <%= stylesheet_link_tag "application-loggedin", :media => "all" %>
     <% else %>
       <%= stylesheet_link_tag "application-loggedout", :media => "all" %>
     <% end %>
     <%= favicon_link_tag asset_path('dc-logo-favicon.png') %>
-    <%= javascript_pack_tag 'application', stats: 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   </head>
 

@@ -10,8 +10,8 @@ addEventListener("trix-initialize", function (event) {
 
 addEventListener("trix-initialize", function (event) {
   const { toolbarElement } = event.target
-  var redoElement = toolbarElement.querySelectorAll('[stats-trix-key="shift+z"]')[0]
-  redoElement.setAttribute('stats-trix-key', 'y')
+  var redoElement = toolbarElement.querySelectorAll('[data-trix-key="shift+z"]')[0]
+  redoElement.setAttribute('data-trix-key', 'y')
 })
 
 addEventListener("trix-action-invoke", function (event) {
@@ -71,23 +71,23 @@ class RichText {
   }
 
   get buttonGroupBlockTools() {
-    return this.toolbarElement.querySelector("[stats-trix-button-group=block-tools]")
+    return this.toolbarElement.querySelector("[data-trix-button-group=block-tools]")
   }
 
   get buttonGroupTextTools() {
-    return this.toolbarElement.querySelector("[stats-trix-button-group=text-tools]")
+    return this.toolbarElement.querySelector("[data-trix-button-group=text-tools]")
   }
 
   get dialogsElement() {
-    return this.toolbarElement.querySelector("[stats-trix-dialogs]")
+    return this.toolbarElement.querySelector("[data-trix-dialogs]")
   }
 
   get originalHeadingButton() {
-    return this.toolbarElement.querySelector("[stats-trix-attribute=heading1]")
+    return this.toolbarElement.querySelector("[data-trix-attribute=heading1]")
   }
 
   get quoteButton() {
-    return this.toolbarElement.querySelector("[stats-trix-attribute=quote]")
+    return this.toolbarElement.querySelector("[data-trix-attribute=quote]")
   }
 
   get toolbarElement() {
@@ -95,15 +95,15 @@ class RichText {
   }
 
   get horizontalButtonTemplate() {
-    return '<button type="button" class="trix-button trix-button--icon trix-button--icon-horizontal-rule" stats-trix-action="x-horizontal-rule" tabindex="-1" title="Divider">Divider</button>'
+    return '<button type="button" class="trix-button trix-button--icon trix-button--icon-horizontal-rule" data-trix-action="x-horizontal-rule" tabindex="-1" title="Divider">Divider</button>'
   }
 
   get headingButtonTemplate() {
-    return '<button type="button" class="trix-button trix-button--icon trix-button--icon-heading-1" stats-trix-action="x-heading" title="Heading" tabindex="-1">Heading</button>'
+    return '<button type="button" class="trix-button trix-button--icon trix-button--icon-heading-1" data-trix-action="x-heading" title="Heading" tabindex="-1">Heading</button>'
   }
 
   get colorButtonTemplate() {
-    return '<button type="button" class="trix-button trix-button--icon trix-button--icon-color" stats-trix-action="x-color" title="Color" tabindex="-1">Color</button>'
+    return '<button type="button" class="trix-button trix-button--icon trix-button--icon-color" data-trix-action="x-color" title="Color" tabindex="-1">Color</button>'
   }
 
   get dialogHeadingTemplate() {
