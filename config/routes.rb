@@ -2,9 +2,8 @@ Rails.application.routes.draw do
 
   root 'notes#index'
 
-  resources :stats, only: [:show, :index]
   get '/dashboard', to: 'stats#show'
-  get '/dashboard-json', to: 'stats#index', as: :stats
+  get '/dashboard-json', to: 'stats#index', as: :data
 
   localized do
     get '/login', to: 'sessions#new', as: 'new_session'
