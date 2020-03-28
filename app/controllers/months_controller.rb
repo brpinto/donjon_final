@@ -1,10 +1,6 @@
 class MonthsController < ApplicationController
 
   def index
-    render_json
-  end
-
-  def show
     current_month = Date.today.mon
     @month = Month.find(current_month)
     @users_count = User.count
@@ -13,6 +9,11 @@ class MonthsController < ApplicationController
     @notes_per_user = @notes_count / @users_count
 
     @month.update(users_total: @users_count, notes_total: @notes_count, users_confirmed: @confirmed_count, notes_per_user: @notes_per_user)
+    
+    render_json
+  end
+
+  def show
   end
 
   private
