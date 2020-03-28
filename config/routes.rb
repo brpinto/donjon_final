@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'notes#index'
 
+  resources :stats, only: [:show, :index]
   get '/dashboard', to: 'stats#show'
   get '/dashboard-json', to: 'stats#index', as: :stats
 
