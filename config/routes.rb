@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'notes#index'
 
   get '/statistics', to: 'stats#show'
-  get '/statistics-json', to: 'stats#index', as: :data
+  get '/statistics-json', to: 'stats#index', as: :statistics
 
   localized do
     get '/login', to: 'sessions#new', as: 'new_session'
