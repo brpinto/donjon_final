@@ -33,18 +33,19 @@
 
     let data_dc = [];
 
-    ajaxGet("<%= statistics_url %>", function(reponse){
+    ajaxGet("<%= data_url %>", function(reponse){
         // on transforme les données au format JSON envoyé par le serveur en objet
         data_dc = JSON.parse(reponse);
-        let usersData = [];
-        let notesData = [];
-        let confirmedData = [];
-        let notesMoyData = [];
+        let usersData = [0, 0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let notesData = [0, 0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let confirmedData = [0, 0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        let notesMoyData = [0, 0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         for (let i in data_dc.months_data) {
-            usersData.push(data_dc.months_data[i].users_total);
-            notesData.push(data_dc.months_data[i].notes_total);
-            notesMoyData.push(data_dc.months_data[i].notes_per_user);
-            confirmedData.push(data_dc.months_data[i].users_confirmed);
+            month = data_dc.months_data[i].monthId;
+            usersData[month] = (data_dc.months_data[i].users_total);
+            notesData[month] = (data_dc.months_data[i].notes_total);
+            notesMoyData[month] = (data_dc.months_data[i].notes_per_user);
+            confirmedData[month] = (data_dc.months_data[i].users_confirmed);
         }
         labels =  data_dc.months_name;
         renderUsersChart(usersData, labels);
