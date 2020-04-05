@@ -16,6 +16,7 @@
       <div id="game-data">
         <%= f.text_field :game_name, placeholder: 'Nom du jeu'%>
         <%= f.text_field :game_type, placeholder: 'Type de jeu' %>
+        <%= f.text_field :all_tags, placeholder: "Tags separated with comma" %>
       </div>
       <%= f.rich_text_area :content, placeholder: 'Votre texte ici...' %>
       <button type="submit" id="new-note" class="contextual-link">Enregistrer</button>

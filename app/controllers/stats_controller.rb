@@ -13,7 +13,7 @@ class StatsController < ApplicationController
       @stat.update(users_total: @users_count, notes_total: @notes_count, users_confirmed: @confirmed_count, notes_per_user: @notes_per_user)
     else
         @stat = Stat.new
-        @stat.update(users_total: @users_count, notes_total: @notes_count, users_confirmed: @confirmed_count, notes_per_user: @notes_per_user)
+        @stat.update(users_total: @users_count, notes_total: @notes_count, users_confirmed: @confirmed_count, notes_per_user: @notes_per_user, monthId: current_month)
     end
 
     render json: {

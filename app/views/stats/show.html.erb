@@ -42,10 +42,10 @@
         let notesMoyData = [0, 0 , 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
         for (let i in data_dc.months_data) {
             month = data_dc.months_data[i].monthId;
-            usersData[month] = (data_dc.months_data[i].users_total);
-            notesData[month] = (data_dc.months_data[i].notes_total);
-            notesMoyData[month] = (data_dc.months_data[i].notes_per_user);
-            confirmedData[month] = (data_dc.months_data[i].users_confirmed);
+            usersData[month - 1] = (data_dc.months_data[i].users_total);
+            notesData[month - 1] = (data_dc.months_data[i].notes_total);
+            notesMoyData[month - 1] = (data_dc.months_data[i].notes_per_user);
+            confirmedData[month - 1] = (data_dc.months_data[i].users_confirmed);
         }
         labels =  data_dc.months_name;
         renderUsersChart(usersData, labels);
